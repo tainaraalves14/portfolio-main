@@ -9,28 +9,31 @@ const World = dynamic(() => import("./Globe").then((m) => m.World), {
 
 const GridGlobe = () => {
   const globeConfig = {
-    pointSize: 4,
-    globeColor: "#6a0dad",
-    showAtmosphere: true,
-    atmosphereColor: "#FFFFFF",
-    atmosphereAltitude: 0.1,
-    emissive: "#062056",
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#FFFFFF",
-    directionalLeftLight: "#ffffff",
-    directionalTopLight: "#ffffff",
-    pointLight: "#ffffff",
-    arcTime: 1000,
-    arcLength: 0.9,
-    rings: 1,
-    maxRings: 3,
-    initialPosition: { lat: 22.3193, lng: 114.1694 },
-    autoRotate: true,
-    autoRotateSpeed: 0.5,
-  };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  pointSize: 4,
+  globeColor: "#C288E2",       // roxo mais rosa
+  showAtmosphere: true,
+  atmosphereColor: "#E3C4F0",  // rosa claro da capa
+  atmosphereAltitude: 0.1,
+  emissive: "#3D2E7D",          // tom mais escuro para profundidade
+  emissiveIntensity: 0.1,
+  shininess: 0.9,
+  polygonColor: "rgba(255,255,255,0.7)",
+  ambientLight: "#FFFFFF",
+  directionalLeftLight: "#ffffff",
+  directionalTopLight: "#ffffff",
+  pointLight: "#ffffff",
+  arcTime: 1000,
+  arcLength: 0.9,
+  rings: 1,
+  maxRings: 3,
+  initialPosition: { lat: 22.3193, lng: 114.1694 },
+  autoRotate: true,
+  autoRotateSpeed: 0.5,
+};
+
+// cores dos arcos do globo
+const colors = ["#ffffffff"];
+
   const sampleArcs = [
     {
       order: 1,

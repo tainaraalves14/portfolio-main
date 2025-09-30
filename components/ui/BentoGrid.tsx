@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import dynamic from "next/dynamic"; // para carregamento dinâmico
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
@@ -8,8 +7,8 @@ import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
-// Carregando Lottie apenas no cliente
-const LottieNoSSR = dynamic(() => import("react-lottie"), { ssr: false });
+// Importando Lottie moderno
+import Lottie from "lottie-react";
 
 export const BentoGrid = ({
   className,
@@ -53,15 +52,6 @@ export const BentoGridItem = ({
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     if (typeof navigator !== "undefined") {
@@ -157,9 +147,14 @@ export const BentoGridItem = ({
 
           {id === 6 && (
             <div className="mt-5 relative">
-              <div className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"}`}>
-                {/* Lottie carregado apenas no cliente */}
-                <LottieNoSSR options={defaultOptions} height={200} width={400} />
+              <div className={`absolute -bottom-5 right-0`}>
+                {/* Lottie moderno */}
+                <Lottie
+                  animationData={animationData}
+                  loop={copied}
+                  autoplay={copied}
+                  style={{ height: 200, width: 400 }}
+                />
               </div>
 
               <MagicButton

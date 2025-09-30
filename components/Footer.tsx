@@ -15,21 +15,22 @@ const Footer = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Vamos juntos <span className="text-purple">transformar </span> desafios em oportunidades digitais?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-         Entre em contato comigo hoje mesmo e vamos discutir como posso ajudar você a atingir seus objetivos.
-        </p>
-        <a href="mailto:contact@jsmastery.pro">
-          <MagicButton
-            title="Entrar em contato"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
+     <div className="flex flex-col items-center text-center px-4 lg:px-0">
+      <h1 className="heading lg:max-w-[45vw] text-3xl md:text-4xl lg:text-5xl font-bold">
+        Vamos juntos <span className="text-purple">transformar</span> desafios em oportunidades digitais?
+      </h1>
+      <p className="text-white-200 md:mt-10 my-5 max-w-[600px]">
+        Entre em contato comigo hoje mesmo e vamos discutir como posso ajudar você a atingir seus objetivos.
+      </p>
+      <a href="mailto:tainaralves148@gmail.com">
+        <MagicButton
+          title="Entrar em contato"
+          icon={<FaLocationArrow />}
+          position="right"
+        />
+      </a>
+    </div>
+
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
           Copyright © 2025 Tainara 

@@ -1,3 +1,22 @@
+import MinhaStack from "@/components/minha-stack";
+import { ReactElement } from 'react';
+
+// ------------------------------------------------------------------
+// CORREÇÃO: Definição da Interface para o Array gridItems
+// Garante que o TypeScript entenda que pageComponent é uma função que retorna JSX
+// ------------------------------------------------------------------
+interface GridItem {
+  id: number;
+  title: string;
+  description: string;
+  className: string;
+  imgClassName: string;
+  titleClassName: string;
+  img: string;
+  spareImg: string;
+  pageComponent?: () => ReactElement | null;
+}
+
 export const navItems = [
   { name: "Sobre", link: "#about" },
   { name: "Projeto", link: "#projects" },
@@ -5,7 +24,7 @@ export const navItems = [
   { name: "Contato", link: "#contact" },
 ];
 
-export const gridItems = [
+export const gridItems: GridItem[] = [
   {
     id: 1,
     title: "Priorizo ​​a colaboração com o cliente, promovendo uma comunicação aberta ",
@@ -100,60 +119,28 @@ export const projects = [
     des:" CelestiumAI é uma plataforma de IA que oferece soluções inovadoras para empresas, impulsionando a eficiência e a tomada de decisões.",
     img: "/13.png",
     iconLists: ["/charp.png" ],
-   link: "/",
+    link: "/",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-   "Não trabalhei com a Tainara profissionalmente, mas nos conhecíamos academicamente e fiquei feliz por ter a oportunidade de conhecê-la. Desde o primeiro ano, fiquei impressionado ao vê-la conduzir sua Iniciação Científica, demonstrando paixão e dedicação à tecnologia. Ela é uma pessoa incrível, com integridade, excelentes habilidades de comunicação e sólido conhecimento técnico. Ela está sempre aprendendo, fazendo perguntas construtivas e disposta a ajudar as pessoas ao seu redor. Recomendo fortemente a Tainara para qualquer oportunidade na área de tecnologia.",    name: "Gisler Ferrarezi",
+    "Não trabalhei com a Tainara profissionalmente, mas nos conhecíamos academicamente e fiquei feliz por ter a oportunidade de conhecê-la. Desde o primeiro ano, fiquei impressionado ao vê-la conduzir sua Iniciação Científica, demonstrando paixão e dedicação à tecnologia. Ela é uma pessoa incrível, com integridade, excelentes habilidades de comunicação e sólido conhecimento técnico. Ela está sempre aprendendo, fazendo perguntas construtivas e disposta a ajudar as pessoas ao seu redor. Recomendo fortemente a Tainara para qualquer oportunidade na área de tecnologia.", 
+    name: "Gisler Ferrarezi",
     title: "Young Apprentice | Computer Science Student | Unisagrado",
   },
   {
-     quote:
-   "Extremamente profissional, sempre buscando entender o problema profundamente e encontrar soluções duradouras. Ela aborda cada projeto com muita seriedade, responsabilizando-se e responsabilizando os outros, sempre buscando entregar os melhores resultados possíveis. Ela tem tudo o que se espera de uma desenvolvedora: faz o que faz porque ama, e faz bem.",    name: "Felipe Bello Grigolato",
+    quote:
+    "Extremamente profissional, sempre buscando entender o problema profundamente e encontrar soluções duradouras. Ela aborda cada projeto com muita seriedade, responsabilizando-se e responsabilizando os outros, sempre buscando entregar os melhores resultados possíveis. Ela tem tudo o que se espera de uma desenvolvedora: faz o que faz porque ama, e faz bem.", 
+    name: "Felipe Bello Grigolato",
     title: "Software Engineering | UNISAGRADO",
-   
   },
   {
     quote:
-   "Desde que conheci a Tainara, durante nossos estudos, ela sempre foi determinada e focada em seus objetivos, muito criativa e persistente. Ela sempre pensa fora da caixa e encara os desafios de frente. Ter alguém como ela em uma equipe é um grande trunfo.",    name: "João Pedro Maria",
+    "Desde que conheci a Tainara, durante nossos estudos, ela sempre foi determinada e focada em seus objetivos, muito criativa e persistente. Ela sempre pensa fora da caixa e encara os desafios de frente. Ter alguém como ela em uma equipe é um grande trunfo.", 
+    name: "João Pedro Maria",
     title: "Data Analyst and Developer",
-  },
-  
-];
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
   },
 ];
 
@@ -186,20 +173,17 @@ export const workExperience = [
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
-
 ];
 
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-  },
-  {
-    id: 2,
-    img: "/twit.svg",
+    link: "https://github.com/seu-usuario",
   },
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/tainaraalvess",
   },
 ];
